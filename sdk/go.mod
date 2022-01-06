@@ -3,8 +3,8 @@ module github.com/bahezi/go-admin-core/sdk
 go 1.14
 
 require (
-	github.com/bahezi/go-admin-core v1.5.0
-	github.com/bahezi/go-admin-core/plugins/logger/zap v0.0.0-20210610020726-2db73adb505d
+	github.com/bahezi/go-admin-core v1.5.2
+	github.com/bahezi/go-admin-core/plugins/logger/zap v1.5.2
 	github.com/bahezi/gorm-adapter/v3 v3.2.1
 	github.com/bsm/redislock v0.5.0
 	github.com/bytedance/go-tagexpr/v2 v2.7.12
