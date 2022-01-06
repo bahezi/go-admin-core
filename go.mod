@@ -1,4 +1,4 @@
-module github.com/go-admin-team/go-admin-core
+module github.com/bahezi/go-admin-core
 
 go 1.14
 

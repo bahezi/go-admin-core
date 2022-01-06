@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"sync"
 
+	"github.com/bahezi/go-admin-core/logger"
+	"github.com/bahezi/go-admin-core/storage"
+	"github.com/bahezi/go-admin-core/storage/queue"
 	"github.com/casbin/casbin/v2"
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/storage"
-	"github.com/go-admin-team/go-admin-core/storage/queue"
 	"github.com/robfig/cron/v3"
 	"gorm.io/gorm"
 )
