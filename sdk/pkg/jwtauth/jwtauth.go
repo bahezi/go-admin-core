@@ -148,7 +148,7 @@ var (
 	ErrMissingSecretKey = errors.New("secret key is required")
 
 	// ErrForbidden when HTTP status 403 is given
-	ErrForbidden = errors.New("you don't have permission to access this resource")
+	ErrForbidden = errors.New("没有权限访问本资源")
 
 	// ErrMissingAuthenticatorFunc indicates Authenticator is required
 	ErrMissingAuthenticatorFunc = errors.New("ginJWTMiddleware.Authenticator func is undefined")
@@ -157,13 +157,13 @@ var (
 	ErrMissingLoginValues = errors.New("missing Username or Password or Code")
 
 	// ErrFailedAuthentication indicates authentication failed, could be faulty username or password
-	ErrFailedAuthentication = errors.New("incorrect Username or Password")
+	ErrFailedAuthentication = errors.New("用户名或者密码错误")
 
 	// ErrFailedTokenCreation indicates JWT Token failed to create, reason unknown
-	ErrFailedTokenCreation = errors.New("failed to create JWT Token")
+	ErrFailedTokenCreation = errors.New("创建令牌失败")
 
 	// ErrExpiredToken indicates JWT token has expired. Can't refresh.
-	ErrExpiredToken = errors.New("token is expired")
+	ErrExpiredToken = errors.New("访问token超时")
 
 	// ErrEmptyAuthHeader can be thrown if authing with a HTTP header, the Auth header needs to be set
 	ErrEmptyAuthHeader = errors.New("auth header is empty")
@@ -213,19 +213,19 @@ var (
 	RKey = "r"
 
 	// RoleIdKey 角色id  Old
-	RoleIdKey   = "roleid"
+	RoleIdKey = "roleid"
 
 	// RoleKey 角色名称  Old
-	RoleKey     = "rolekey"
+	RoleKey = "rolekey"
 
 	// RoleNameKey 角色名称  Old
 	RoleNameKey = "rolename"
 
 	// RoleIdKey 部门id
-	DeptId   = "deptId"
+	DeptId = "deptId"
 
 	// RoleKey 部门名称
-	DeptName     = "deptName"
+	DeptName = "deptName"
 )
 
 // New for check error with GinJWTMiddleware
