@@ -9,8 +9,8 @@ require (
 	github.com/casbin/redis-watcher/v2 v2.0.0-20220614104201-0e70bf2be930
 	github.com/chanxuehong/wechat v0.0.0-20201110083048-0180211b69fd
 	github.com/gin-gonic/gin v1.7.3
-	github.com/bahezi/go-admin-core v2.2.0
-	github.com/bahezi/go-admin-core/plugins/logger/zap v2.2.0
+	github.com/bahezi/go-admin-core v1.5.3
+	github.com/bahezi/go-admin-core/plugins/logger/zap v1.5.3
 	github.com/bahezi/gorm-adapter/v3 v3.2.2
 	github.com/go-playground/locales v0.13.0
 	github.com/go-playground/universal-translator v0.17.0
