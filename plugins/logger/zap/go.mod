@@ -1,6 +1,6 @@
 module github.com/bahezi/go-admin-core/plugins/logger/zap
 
-go 1.14
+go 1.17
 
 require (
 	github.com/bahezi/go-admin-core v1.5.2

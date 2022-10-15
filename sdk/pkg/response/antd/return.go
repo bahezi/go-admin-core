@@ -1,9 +1,10 @@
 package antd
 
 import (
+	"net/http"
+
 	"github.com/bahezi/go-admin-core/sdk/pkg"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 // Error 失败数据处理
@@ -28,6 +29,18 @@ func OK(c *gin.Context, data interface{}) {
 	var res response
 	res.Data = data
 	res.Success = true
+	res.Status = "done"
+	res.TraceId = pkg.GenerateMsgIDFromContext(c)
+	c.Set("result", res)
+	c.Set("status", http.StatusOK)
+	c.AbortWithStatusJSON(http.StatusOK, res)
+}
+
+func UpFileOK(c *gin.Context, data interface{}) {
+	var res response
+	res.Data = data
+	res.Success = true
+	res.Status = "done"
 	res.TraceId = pkg.GenerateMsgIDFromContext(c)
 	c.Set("result", res)
 	c.Set("status", http.StatusOK)
@@ -41,6 +54,19 @@ func PageOK(c *gin.Context, result interface{}, total int, current int, pageSize
 	res.Total = total
 	res.Current = current
 	res.PageSize = pageSize
+	res.Success = true
+	res.TraceId = pkg.GenerateMsgIDFromContext(c)
+	c.Set("result", res)
+	c.Set("status", http.StatusOK)
+	c.AbortWithStatusJSON(http.StatusOK, res)
+}
+
+func ListOK(c *gin.Context, result interface{}, total int, current int, pageSize int) {
+	var res lists
+	res.ListData.List = result
+	res.ListData.Total = total
+	res.ListData.Current = current
+	res.ListData.PageSize = pageSize
 	res.Success = true
 	res.TraceId = pkg.GenerateMsgIDFromContext(c)
 	c.Set("result", res)

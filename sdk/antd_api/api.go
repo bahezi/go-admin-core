@@ -3,11 +3,12 @@ package antd_apis
 import (
 	"errors"
 	"fmt"
+	"net/http"
+	"strconv"
+
 	"github.com/bahezi/go-admin-core/sdk/service"
 	vd "github.com/bytedance/go-tagexpr/v2/validator"
 	"github.com/gin-gonic/gin/binding"
-	"net/http"
-	"strconv"
 
 	"github.com/bahezi/go-admin-core/logger"
 	"github.com/bahezi/go-admin-core/sdk/api"
@@ -56,6 +57,10 @@ func (e *Api) OK(data interface{}) {
 // PageOK 分页数据处理
 func (e *Api) PageOK(result interface{}, total int, current int, pageSize int) {
 	antd.PageOK(e.Context, result, total, current, pageSize)
+}
+
+func (e *Api) ListOK(result interface{}, total int, current int, pageSize int) {
+	antd.ListOK(e.Context, result, total, current, pageSize)
 }
 
 // Custom 兼容函数
@@ -128,4 +133,8 @@ func (e *Api) AddError(err error) {
 		e.Logger.Error(err)
 		e.Errors = fmt.Errorf("%v; %w", e.Error, err)
 	}
+}
+
+func (e Api) Translate(form, to interface{}) {
+	pkg.Translate(form, to)
 }

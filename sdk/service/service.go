@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/bahezi/go-admin-core/logger"
+	"github.com/bahezi/go-admin-core/storage"
 	"gorm.io/gorm"
 )
 
@@ -13,6 +14,7 @@ type Service struct {
 	MsgID string
 	Log   *logger.Helper
 	Error error
+	Cache storage.AdapterCache
 }
 
 func (db *Service) AddError(err error) error {

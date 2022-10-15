@@ -2,9 +2,10 @@ package ctxlog
 
 import (
 	"context"
+
 	"github.com/bahezi/go-admin-core/logger"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware/tags"
+	grpc_ctxtags "github.com/grpc-ecosystem/go-grpc-middleware/tags"
 )
 
 type ctxMarker struct{}

@@ -1,8 +1,9 @@
 package runtime
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 
 	"github.com/bahezi/go-admin-core/logger"
 	"github.com/bahezi/go-admin-core/storage"
@@ -60,4 +61,11 @@ type Runtime interface {
 	GetHandlerPrefix(key string) []func(r *gin.RouterGroup, hand ...*gin.HandlerFunc)
 
 	GetStreamMessage(id, stream string, value map[string]interface{}) (storage.Messager, error)
+
+	GetConfig(key string) interface{}
+	SetConfig(key string, value interface{})
+
+	// SetAppRouters set AppRouter
+	SetAppRouters(appRouters func())
+	GetAppRouters() []func()
 }
