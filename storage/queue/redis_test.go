@@ -52,11 +52,9 @@ func TestRedis_Append(t *testing.T) {
 			args{
 				name: "test",
 				message: &Message{redisqueue.Message{
-					Stream: "test",
-					Values: map[string]interface{}{
-						"key": "value",
-					},
-				}},
+					ID:"", Stream: "test", Values: map[string]interface{}{ "key": "value", },
+				},0,
+			},
 			},
 			false,
 		},

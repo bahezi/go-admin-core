@@ -34,13 +34,9 @@ func TestMemory_Append(t *testing.T) {
 			fields{},
 			args{
 				name: "test",
-				message: &Message{redisqueue.Message{
-					ID:     "",
-					Stream: "test",
-					Values: map[string]interface{}{
-						"key": "value",
-					},
-				}},
+				message: &Message{
+					redisqueue.Message{ ID:"", Stream: "test", Values: map[string]interface{}{ "key": "value", },
+				},0,},
 			},
 			false,
 		},
@@ -88,13 +84,11 @@ func TestMemory_Register(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			m := NewMemory(100)
 			m.Register(tt.name, tt.args.f)
-			if err := m.Append(&Message{redisqueue.Message{
-				ID:     "",
-				Stream: "test",
-				Values: map[string]interface{}{
-					"key": "value",
-				},
-			}}); err != nil {
+			if err := m.Append(&Message{
+				redisqueue.Message{ 
+					ID:"", Stream: "test", Values: map[string]interface{}{ "key": "value", },
+					},0,
+					}); err != nil {
 				t.Error(err)
 				return
 			}
