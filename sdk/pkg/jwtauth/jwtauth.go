@@ -148,28 +148,28 @@ type GinJWTMiddleware struct {
 
 var (
 	// ErrMissingSecretKey indicates Secret key is required
-	ErrMissingSecretKey = errors.New("secret key is required")
+	ErrMissingSecretKey = errors.New("必须提供密钥")
 
 	// ErrForbidden when HTTP status 403 is given
-	ErrForbidden = errors.New("you don't have permission to access this resource")
+	ErrForbidden = errors.New("没有权限访问本资源")
 
 	// ErrMissingAuthenticatorFunc indicates Authenticator is required
-	ErrMissingAuthenticatorFunc = errors.New("ginJWTMiddleware.Authenticator func is undefined")
+	ErrMissingAuthenticatorFunc = errors.New("验证功能函数没定义")
 
 	// ErrMissingLoginValues indicates a user tried to authenticate without username or password
-	ErrMissingLoginValues = errors.New("missing Username or Password or Code")
+	ErrMissingLoginValues = errors.New("用户名或者密码为空")
 
 	// ErrFailedAuthentication indicates authentication failed, could be faulty username or password
-	ErrFailedAuthentication = errors.New("incorrect Username or Password")
+	ErrFailedAuthentication = errors.New("用户名或者密码错误")
 
 	// ErrFailedTokenCreation indicates JWT Token failed to create, reason unknown
-	ErrFailedTokenCreation = errors.New("failed to create JWT Token")
+	ErrFailedTokenCreation = errors.New("创建令牌失败")
 
 	// ErrExpiredToken indicates JWT token has expired. Can't refresh.
-	ErrExpiredToken = errors.New("token is expired")
+	ErrExpiredToken = errors.New("访问token超时")
 
 	// ErrEmptyAuthHeader can be thrown if authing with a HTTP header, the Auth header needs to be set
-	ErrEmptyAuthHeader = errors.New("auth header is empty")
+	ErrEmptyAuthHeader = errors.New("身份验证标头为空")
 
 	// ErrMissingExpField missing exp field in token
 	ErrMissingExpField = errors.New("missing exp field")
@@ -178,7 +178,7 @@ var (
 	ErrWrongFormatOfExp = errors.New("exp must be float64 format")
 
 	// ErrInvalidAuthHeader indicates auth header is invalid, could for example have the wrong Realm name
-	ErrInvalidAuthHeader = errors.New("auth header is invalid")
+	ErrInvalidAuthHeader = errors.New("身份验证标头无效")
 
 	// ErrEmptyQueryToken can be thrown if authing with URL Query, the query token variable is empty
 	ErrEmptyQueryToken = errors.New("query token is empty")
@@ -190,21 +190,21 @@ var (
 	ErrEmptyParamToken = errors.New("parameter token is empty")
 
 	// ErrInvalidSigningAlgorithm indicates signing algorithm is invalid, needs to be HS256, HS384, HS512, RS256, RS384 or RS512
-	ErrInvalidSigningAlgorithm = errors.New("invalid signing algorithm")
+	ErrInvalidSigningAlgorithm = errors.New("签名算法无效")
 
 	ErrInvalidVerificationode = errors.New("验证码错误")
 
 	// ErrNoPrivKeyFile indicates that the given private key is unreadable
-	ErrNoPrivKeyFile = errors.New("private key file unreadable")
+	ErrNoPrivKeyFile = errors.New("私钥文件没有有效信息")
 
 	// ErrNoPubKeyFile indicates that the given public key is unreadable
-	ErrNoPubKeyFile = errors.New("public key file unreadable")
+	ErrNoPubKeyFile = errors.New("公钥文件没有有效信息")
 
 	// ErrInvalidPrivKey indicates that the given private key is invalid
-	ErrInvalidPrivKey = errors.New("private key invalid")
+	ErrInvalidPrivKey = errors.New("私钥无效")
 
 	// ErrInvalidPubKey indicates the the given public key is invalid
-	ErrInvalidPubKey = errors.New("public key invalid")
+	ErrInvalidPubKey = errors.New("公钥无效")
 
 	// IdentityKey default identity key
 	IdentityKey = "identity"
