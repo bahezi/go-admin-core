@@ -48,7 +48,7 @@ type Config struct {
 	Logger      *Logger               `yaml:"logger"`
 	Jwt         *Jwt                  `yaml:"jwt"`
 	Database    *Database             `yaml:"database"`
-	Databases   *map[string]*Database `yaml:"databases"`
+	Databases   *map[string]*Database `yaml:"databases,omitempty"`
 	Gen         *Gen                  `yaml:"gen"`
 	Cache       *Cache                `yaml:"cache"`
 	Queue       *Queue                `yaml:"queue"`
